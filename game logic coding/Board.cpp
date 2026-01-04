@@ -1,28 +1,23 @@
 #include"Board.h"
 
-Board::Board() : moleVisible(size , std::vector<bool>(size , false)) {}
+Board::Board(int w, int l) : width(w), length(l), moleVisible(l, std::vector<bool>(w, false)) {}
 
-void Board::show_mole_at(int x, int y)
+void Board::Show(int x, int y)
 {
-	if(x >= 0 && x < size && y >= 0 && y < size)
-		moleVisible[x][y] = true;
+	if (x >= 0 && x < width && y >= 0 && y < length)
+		moleVisible[y][x] = true;
 }
 
-void Board::disapear(int x, int y)
+void Board::Disappear()
 {
-	if (x >= 0 && x < size && y >= 0 && y < size)
-		moleVisible[x][y] = false;
+	for (int y = 0; y < length; y++)
+		for (int x = 0; x < width; x++)
+			moleVisible[y][x] = false;
 }
 
-void Board::hide()
+bool Board::IsMoleAt(int x, int y)
 {
-	for (int i = 0; i < size; i++)
-		for (int j = 0; j < size; j++)
-			moleVisible[i][j] = false;
-}
-
-bool Board::Print()const
-{
-	for(int i = 0 ; i < size ; i++)
-		for(int j = 0 ; j < size ; j++)
+	if (x < 0 || x >= width || y < 0 || y >= length)
+		return false;
+		return moleVisible[y][x];
 }

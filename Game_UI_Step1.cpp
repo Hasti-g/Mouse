@@ -2,6 +2,7 @@
 //
 
 #include <iostream>
+#include <vector>
 using namespace std;
 
 class Stage
@@ -30,6 +31,69 @@ class Stage
         }
     }
 };
+
+class Game
+{
+   public:
+       int currentPhase , currentStage , totalPhases, stagesPerPhase , currentScore;
+       vector<Stage> stages;
+
+       Game (int totalPhases_, int stagesPerPhase_)
+       {
+           totalPhases = totalPhases_;
+           stagesPerPhase = stagesPerPhase_;
+           currentPhase = 1;
+           currentStage = 0;
+           currentScore = 0;
+           for (int i = 0; i < stagesPerPhase; i++)
+           {
+               int stageNumber = i + 1;
+               Stage s;
+               s.rows = stageNumber;
+               s.cols = 3;  
+               s.molecol = 0;   
+               s.currentScore = 0;
+               s.scoreRequired = 50; 
+               stages.push_back(s);
+           }
+       }
+       void  CurrentStage()
+       {
+           if (currentStage < stages.size())
+           {
+               stages[currentStage].display();
+           }
+           else
+           {
+               cout << "No Stage available!\n";
+           }
+       }
+       void goToNextStage()
+       {
+           currentStage++;
+           if (currentStage >= stagesPerPhase)
+           {
+               currentStage = 0;
+               currentPhase = currentPhase + 1;
+               if (currentPhase > totalPhases)
+               {
+                   cout << "Game Finished" << "\n";
+               }
+               stages.clear();
+               for (int i = 0; i < stagesPerPhase; i++)
+               {
+                   Stage s;
+                   s.rows = 1;
+                   s.cols = i + 1;
+                   s.molecol = 0;
+                   s.currentScore = 0;
+                   s.scoreRequired = 5;
+                   stages.push_back(s);
+               }
+           }
+       }
+};
+
 int main()
 {
     

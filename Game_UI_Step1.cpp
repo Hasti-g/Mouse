@@ -20,11 +20,11 @@ class Stage
             {
                 if (j == molecol)
                 {
-                    cout << "[M]";
+                    cout << "[M] ";
                 }
                 else
                 {
-                    cout << "[ ]";
+                    cout << "[ ] ";
                 }
             }
             cout << "\n";
@@ -79,16 +79,20 @@ class Game
                {
                    cout << "Game Finished" << "\n";
                }
-               stages.clear();
-               for (int i = 0; i < stagesPerPhase; i++)
+               if (currentPhase <= totalPhases)
                {
-                   Stage s;
-                   s.rows = i + 1;
-                   s.cols = 3;
-                   s.molecol = 0;
-                   s.currentScore = 0;
-                   s.scoreRequired = 5;
-                   stages.push_back(s);
+                   stages.clear();
+                   for (int i = 0; i < stagesPerPhase; i++)
+                   {
+                       int stageNumber = i + 1;
+                       Stage s;
+                       s.rows = stageNumber;
+                       s.cols = 3;
+                       s.molecol = 0;
+                       s.currentScore = 0;
+                       s.scoreRequired = 5;
+                       stages.push_back(s);
+                   }
                }
            }
        }
@@ -96,7 +100,22 @@ class Game
 
 int main()
 {
-    
+    int phases = 2;
+    int stages = 3;
+    Game g(phases, stages);
+    while (g.currentPhase <= 2)
+    {
+        cout << "\n ** CurrentPhase: " << g.currentPhase << " **\n";
+        cout << "\n ** CurrentStage: " << g.currentStage << " **\n";
+        g.CurrentStage();
+        int x;
+        do {
+            cout << "Enter 10 to go to the next stage: ";
+            cin >> x;
+        } while (x != 10);
+        g.goToNextStage();
+    }
+    cout << "Game Finished";
     return 0;
 }
 

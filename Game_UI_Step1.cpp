@@ -83,8 +83,8 @@ class Game
                for (int i = 0; i < stagesPerPhase; i++)
                {
                    Stage s;
-                   s.rows = 1;
-                   s.cols = i + 1;
+                   s.rows = i + 1;
+                   s.cols = 3;
                    s.molecol = 0;
                    s.currentScore = 0;
                    s.scoreRequired = 5;
@@ -97,5 +97,6 @@ class Game
 int main()
 {
     
+    return 0;
 }
 

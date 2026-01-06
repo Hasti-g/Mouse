@@ -65,7 +65,7 @@ class Game
            }
            else
            {
-               cout << "No Stage available!\n";
+               cout << "Stage isn't available" << "\n";
            }
        }
        void goToNextStage()

@@ -90,7 +90,7 @@ class Game
                        s.cols = 3;
                        s.molecol = 0;
                        s.currentScore = 0;
-                       s.scoreRequired = 5;
+                       s.scoreRequired = 50;
                        stages.push_back(s);
                    }
                }
@@ -106,13 +106,31 @@ int main()
     while (g.currentPhase <= 2)
     {
         cout << "\n ** CurrentPhase: " << g.currentPhase << " **\n";
-        cout << "\n ** CurrentStage: " << g.currentStage << " **\n";
+        cout << "\n ** CurrentStage: " << g.currentStage + 1 << " **\n";
         g.CurrentStage();
+        cout << "To play, enter a number between 1 and 9";
         int x;
+        cin >> x;
+        if ((x >= 1) && (x <= 9))
+        {
+            if (x % 2 == 0)
+            {
+                cout << "Hit";
+            }
+            else
+            {
+                cout << "Miss";
+            }
+        }
+        else
+        {
+            cout << "The number is wrong";
+        }
+        int y;
         do {
-            cout << "Enter 10 to go to the next stage: ";
-            cin >> x;
-        } while (x != 10);
+            cout << "Enter 10 to go to the next stage ";
+            cin >> y;
+        } while (y != 10);
         g.goToNextStage();
     }
     cout << "Game Finished";

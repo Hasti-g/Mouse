@@ -2,22 +2,21 @@
 #include <random>
 
 Stage::Stage(int boardWidth, int boardLength,
-    int totalTime, int moleCount, int moleTime, int scoreReq,
-    bool penalize, bool bonus)
+             int totalTime, int moleCount, int moleTime, int scoreReq,
+             bool penalize, bool bonus)
     : board(boardWidth, boardLength),
-    totalTimeSeconds(totalTime),
-    totalMoles(moleCount),
-    moleVisibleTime(moleTime),
-    scoreRequired(scoreReq),
-    penalizeMisses(penalize),
-    enableBonus(bonus),
-    currentScore(0),
-    consecutiveHits(0),
-    molesShown(0),
-    stageEnded(false),
-    stageWon(false),
-    isMoleVisible(false) {
-}
+      totalTimeSeconds(totalTime),
+      totalMoles(moleCount),
+      moleVisibleTime(moleTime),
+      scoreRequired(scoreReq),
+      penalizeMisses(penalize),
+      enableBonus(bonus),
+      currentScore(0),
+      consecutiveHits(0),
+      molesShown(0),
+      stageEnded(false),
+      stageWon(false),
+      isMoleVisible(false) {}
 
 void Stage::Start()
 {

@@ -19,8 +19,8 @@ bool LoadGame(int& phase, int& stage) {
 }
 
 int main() {
-    int currentPhase = 1; 
-    int currentStage = 0; 
+    int currentPhase = 1;
+    int currentStage = 0;
 
     if (LoadGame(currentPhase, currentStage)) {
         std::cout << "from stage " << (currentStage + 1)
@@ -30,7 +30,6 @@ int main() {
     }
 
     Phase phase(currentPhase == 2);
-    
     phase.Start();
 
     while (!phase.IsEnded()) {
@@ -38,7 +37,7 @@ int main() {
         std::cout << "\nEnter mole position (x y): ";
         std::cin >> x >> y;
 
-        phase.ProcessHit(x, y);
+        phase.ProcessHit(x, y); 
         phase.Update();
 
         std::cout << "Current total score: " << phase.GetTotalScore() << "\n";
@@ -48,7 +47,5 @@ int main() {
     std::cout << "Final score: " << phase.GetTotalScore() << "\n";
 
     SaveGame(currentPhase, currentStage + 1);
-
     return 0;
 }
-

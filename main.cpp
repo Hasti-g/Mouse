@@ -38,7 +38,7 @@ int main() {
         std::cout << "\nEnter mole position (x y): ";
         std::cin >> x >> y;
 
-        phase.ProcessHit(x, y, true);
+        phase.ProcessHit(x, y);
         phase.Update();
 
         std::cout << "Current total score: " << phase.GetTotalScore() << "\n";
@@ -51,3 +51,4 @@ int main() {
 
     return 0;
 }
+

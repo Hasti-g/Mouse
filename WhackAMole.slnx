@@ -1,0 +1,7 @@
+<Solution>
+  <Configurations>
+    <Platform Name="x64" />
+    <Platform Name="x86" />
+  </Configurations>
+  <Project Path="WhackAMole.vcxproj" Id="70c73794-0d12-4187-a602-65305029f1e7" />
+</Solution>

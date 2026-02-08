@@ -1,27 +1,43 @@
 #include <iostream>
+#include <fstream>
 #include <thread>
 #include "Phase.h"
 
-int main()
-{
-    Phase phase(false);
-    phase.Start();
+void SaveGame(int phase, int stage) {
+    std::ofstream file("save.txt");
+    file << phase << "\n" << stage << "\n";
+    file.close();
+}
 
-    while (!phase.IsEnded())
-    {
-        std::this_thread::sleep_for(std::chrono::milliseconds(100));
-        phase.Update();
+bool LoadGame(int& phase, int& stage) {
+    std::ifstream file("save.txt");
+    if (file.is_open()) {
+        file >> phase >> stage;
+        file.close();
+        return true;
+    }
+    return false;
+}
 
-        phase.ProcessHit(0, 0);
+int main() {
+    int currentPhase = 1; 
+    int currentStage = 0; 
+
+    if (LoadGame(currentPhase, currentStage)) {
+        std::cout << "from stage " << (currentStage + 1)
+            << " phase " << currentPhase << " continued.\n";
+    }
+    else {
+        std::cout << "new game started.\n";
     }
 
-    std::cout << "Game Over!\n";
-    std::cout << "Total Score: " << phase.GetTotalScore() << "\n";
+    Phase phase(currentPhase == 2);
 
-    if (phase.IsWon())
-        std::cout << "Phase Completed!\n";
-    else
-        std::cout << "You Lost the Phase.\n";
+    for (int i = 0; i < currentStage; i++) {
+    }
+    phase.Start();
+
+    SaveGame(currentPhase, currentStage + 1);
 
     return 0;
 }

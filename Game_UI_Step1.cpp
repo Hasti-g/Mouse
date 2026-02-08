@@ -108,18 +108,18 @@ int main()
         cout << "\n ** CurrentPhase: " << g.currentPhase << " **\n";
         cout << "\n ** CurrentStage: " << g.currentStage + 1 << " **\n";
         g.CurrentStage();
-        cout << "To play, enter a number between 1 and 9";
+        cout << "To play, enter a number between 1 and 9" << "\n";
         int x;
         cin >> x;
         if ((x >= 1) && (x <= 9))
         {
             if (x % 2 == 0)
             {
-                cout << "Hit";
+                cout << "Hit" << "\n";
             }
             else
             {
-                cout << "Miss";
+                cout << "Miss" << "\n";
             }
         }
         else
@@ -133,6 +133,8 @@ int main()
         } while (y != 10);
         g.goToNextStage();
     }
+    cout << " ** Leaderboard **" << "\n";
+    cout << "CurrentScore: " << g.currentScore << "\n";
     cout << "Game Finished";
     return 0;
 }

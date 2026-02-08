@@ -1,0 +1,37 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\hasti\\Desktop\\Game_UI\\Game_UI\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{851E8CA3-83BE-4DBE-9E1C-EB2A25FF2C02}|Game_UI.vcxproj|C:\\Users\\hasti\\Desktop\\Game_UI\\Game_UI\\Game_UI_Step1.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{851E8CA3-83BE-4DBE-9E1C-EB2A25FF2C02}|Game_UI.vcxproj|solutionrelative:Game_UI_Step1.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Game_UI_Step1.cpp",
+              "DocumentMoniker": "C:\\Users\\hasti\\Desktop\\Game_UI\\Game_UI\\Game_UI_Step1.cpp",
+              "RelativeDocumentMoniker": "Game_UI_Step1.cpp",
+              "ToolTip": "C:\\Users\\hasti\\Desktop\\Game_UI\\Game_UI\\Game_UI_Step1.cpp",
+              "RelativeToolTip": "Game_UI_Step1.cpp",
+              "ViewState": "AgIAAGYAAAAAAAAAAAAAAHgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2026-01-03T17:01:12.907Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

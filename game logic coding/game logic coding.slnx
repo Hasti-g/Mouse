@@ -1,8 +1,0 @@
-<Solution>
-  <Configurations>
-    <Platform Name="x64" />
-    <Platform Name="x86" />
-  </Configurations>
-  <Folder Name="/Solution Items/" />
-  <Project Path="game logic coding.vcxproj" />
-</Solution>

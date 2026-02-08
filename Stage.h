@@ -1,40 +1,43 @@
 #pragma once
-#include"Board.h"
-#include<chrono>
+#include "Board.h"
+#include <chrono>
 
-class GameStage
+class Stage
 {
 private:
-	Board board;
-	const int totalTimeSeconds;
-	const int totalMoles;
-	const int moleVisibleTime;
-	const int scoreRequired;
-	const bool penaliseMisses;
-	const bool enableBonus;
+    Board board;
 
-	int currentScore;
-	int consectiveHits;
-	int molesShown;
-	bool stageEnd;
-	bool stageWon;
+    const int totalTimeSeconds;
+    const int totalMoles;
+    const int moleVisibleTime;
+    const int scoreRequired;
+    const bool penalizeMisses;
+    const bool enableBonus;
 
-	std::chrono::steady_clock::time_point stageStartTime;
-	std::chrono::steady_clock::time_point currentMoleHideTime;
-	bool isMoleVisible;
+    int currentScore;
+    int consecutiveHits;
+    int molesShown;
 
-	void ShowNextMole();
+    bool stageEnded;
+    bool stageWon;
+    bool isMoleVisible;
+
+    std::chrono::steady_clock::time_point stageStartTime;
+    std::chrono::steady_clock::time_point currentMoleShowTime;
+
+    void ShowNextMole();
 
 public:
-	GameStage(int boardWidth, int BoardLength,
-		int totalTime, int moleCount, int moleTime, int scoreReq,
-		bool penalize = false, bool bonus = false);
+    Stage(int boardWidth, int boardLength,
+        int totalTime, int moleCount, int moleTime, int scoreReq,
+        bool penalize = false, bool bonus = false);
 
-	void Start();
-	void ProccessHit(int x, int y, bool isCorrect);
-	void Update();
-	int getScore() const;
-	bool IsEnded() const;
-	bool IsWon() const;
-	const Board& GetBorad() const;
+    void Start();
+    void ProcessHit(int x, int y);
+    void Update();
+
+    int GetScore() const;
+    bool IsEnded() const;
+    bool IsWon() const;
+    const Board& GetBoard() const;
 };

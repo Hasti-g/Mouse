@@ -16,7 +16,8 @@ in this game:
   ##Team members:
 - Bahar Masoumi
 - Hasti Golestani
-  **Project Structure:**
+
+  ##**Project Structure:**
 ``` 
 Whack-a-Mole/
 │

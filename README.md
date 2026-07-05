@@ -1,4 +1,4 @@
-**Whack-a-mole game(C++)**
+##Whack-a-mole game(C++)
   project description:
 This projrct is an implementation of the classic(and physical) whack-a-mole which now is written in C++.
 The game is developed as a team project with the goal of practicing basic programming concepts, teamwork, using GitHub, and the base of game logic.
@@ -13,9 +13,9 @@ in this game:
 *  Compiler: GCC/MinGW
 *  Platform: console-based application
 *  Version control: Git and GitHub
-  **Team members:**
-Bahar Masoumi
-Hasti Golestani
+  ##Team members:
+- Bahar Masoumi
+- Hasti Golestani
   **Project Structure:**
 ``` 
 Whack-a-Mole/
